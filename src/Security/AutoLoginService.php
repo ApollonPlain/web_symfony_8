@@ -42,7 +42,7 @@ class AutoLoginService
         }
 
         // Login the user
-        $this->security->login($user, 'app_authenticator');
+        $this->security->login($user, AppAuthenticator::class);
 
         // Store last username in session like a normal login would
         $session = $this->requestStack->getSession();
