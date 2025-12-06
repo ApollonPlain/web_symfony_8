@@ -31,10 +31,6 @@ final class Version20250318120047 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE SCHEMA public');
         $this->addSql('DROP SEQUENCE daily_quiz_progress_id_seq CASCADE');
-        $this->addSql('CREATE SEQUENCE request_id_seq INCREMENT BY 1 MINVALUE 1 START 1');
-        $this->addSql('CREATE TABLE request (id INT NOT NULL, route VARCHAR(255) NOT NULL, data TEXT NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, is_main_resquest BOOLEAN NOT NULL, PRIMARY KEY(id))');
-        $this->addSql('COMMENT ON COLUMN request.data IS \'(DC2Type:array)\'');
-        $this->addSql('COMMENT ON COLUMN request.created_at IS \'(DC2Type:datetime_immutable)\'');
         $this->addSql('ALTER TABLE daily_quiz_progress DROP CONSTRAINT FK_264552B5A76ED395');
         $this->addSql('DROP TABLE daily_quiz_progress');
     }
