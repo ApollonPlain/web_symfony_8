@@ -16,7 +16,8 @@ migration:
 	symfony console doctrine:migrations:migrate
 
 db-init:
-	symfony console doctrine:database:drop --force
-	symfony console doctrine:database:create
+	symfony console doctrine:database:create --if-not-exists
 	symfony console doctrine:migration:migrate
 	symfony console doctrine:fixture:load
+
+install: up db-init
