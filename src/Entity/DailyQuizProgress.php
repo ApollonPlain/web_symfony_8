@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 class DailyQuizProgress
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue(strategy: 'AUTO')]
+    #[ORM\GeneratedValue(strategy: 'SEQUENCE')]
     #[ORM\Column]
     private ?int $id = null;
 
@@ -28,7 +28,7 @@ class DailyQuizProgress
     private ?User $user = null;
 
     #[ORM\Column]
-    private ?int $dailyGoal = 20;
+    private ?int $dailyGoal = 10;
 
     public function __construct()
     {

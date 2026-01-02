@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/quiz/session')]
 class QuizSessionController extends AbstractController
@@ -164,9 +164,9 @@ class QuizSessionController extends AbstractController
 
         $random = mt_rand(1, 100);
         $max = match (true) {
-            $random <= 20 => 1,
-            $random <= 35 => 2,
-            $random <= 50 => 3,
+            $random <= 40 => 1,
+            $random <= 55 => 2,
+            $random <= 80 => 3,
             default => mt_rand(4, 30),
         };
 
